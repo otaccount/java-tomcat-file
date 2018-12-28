@@ -1,0 +1,31 @@
+gradleプロジェクトまでの手順
+構成→ファセットフォームへ変換
+java8 動的
+
+フォルダ構成の作成
+
+build.xmlの作成
+
+構成→gradleネイチャーの追加
+
+サーブレットの反映
+gradle compileJava
+
+
+参考
+https://www.yoheim.net/blog.php?q=20171201
+
+https://qiita.com/shibafu/items/16dbf776bd81a40450fd
+
+https://qiita.com/shintaness/items/55b610c770a08605d1fa
+
+https://qiita.com/alpha_pz/items/fe808da6d232a14ac7a9
+
+https://mike-neck.hatenadiary.com/entry/2014/10/30/144902
+
+
+
+http://blog.livedoor.jp/itawasa7/?p=6
+
+// gradleについて
+https://qiita.com/vvakame/items/83366fbfa47562fafbf4

@@ -1,0 +1,47 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+
+	dependencies {
+	    classpath 'com.bmuschko:gradle-tomcat-plugin:2.5'
+	}
+}
+
+// apply plugin: 'eclipse'
+apply plugin: 'war'
+apply plugin: 'com.bmuschko.tomcat'
+
+sourceSets {
+    [ compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+}
+
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    def tomcatVersion = '9.0.12'
+    tomcat "org.apache.tomcat.embed:tomcat-embed-core:${tomcatVersion}",
+           "org.apache.tomcat.embed:tomcat-embed-logging-juli:9.0.0.M6",
+           "org.apache.tomcat.embed:tomcat-embed-jasper:${tomcatVersion}"
+}
+
+tomcat {
+    httpProtocol = 'org.apache.coyote.http11.Http11Nio2Protocol'
+    ajpProtocol  = 'org.apache.coyote.ajp.AjpNio2Protocol'
+}
+
+dependencies {
+     // https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api
+	providedCompile 'javax.servlet:javax.servlet-api:3.1.0'
+	
+	// https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-s3
+	compile group: 'com.amazonaws', name: 'aws-java-sdk-s3', version: '1.11.458'
+}
+
+tomcat{
+    httpPort = 18080
+}
+
